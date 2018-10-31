@@ -11,20 +11,23 @@ import java.io.IOException;
 
 
 public class AccountService {
-	static Map<String, String> accounMap = new HashMap<String, String>();
+	static Map<String, Account> accounMap = new HashMap<String, Account>();
 	String name;
 	
 	
-	public String accountCycle (String firstName ){
+	public int accountCycle (String account2 ){
 	
-		for (String str : accounMap.values()) {
-		    System.out.println(str);
+		int count = 0;
+		for (Account str : accounMap.values()) {
+		    if(str.firstName.equals(account2)) {
+		    	count++;
+		    }
 	}
 		
-		return name;
+		return count;
 	}
 	public int Streams (String firstName ) {
-		return (int) accounMap.values().stream().filter(i -> i.equals(firstName)).count();
+		return (int) accounMap.values().stream().filter(i -> i.getFirstName().equals(firstName)).count();
 		 
 	}
    
@@ -32,11 +35,11 @@ public class AccountService {
 
 public void addAccount (Account acc ) {
 	name = acc.getFirstName() + acc.getLastName();
-	accounMap.put(name, acc.getAccountNumber());
+	accounMap.put(name,acc);
 	
 }
 
-public Map<String, String> viewMap() {
+public Map<String, Account> viewMap() {
 	return accounMap;
 }
 public String ConvertOjSON( Map<String, String> myMap) throws JsonProcessingException{

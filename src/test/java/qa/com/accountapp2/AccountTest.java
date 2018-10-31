@@ -1,10 +1,12 @@
 package qa.com.accountapp2;
 
+import org.junit.Test;
+
 import junit.framework.TestCase;
 
 public class AccountTest extends TestCase {
 	
-	@test 
+	@Test 
 	public void test() {
 		
 		AccountService account = new AccountService();
@@ -18,9 +20,9 @@ public class AccountTest extends TestCase {
 		
 		
 		
-		aserEquals(1,account.getAccountsum(account2));
-		aserEquals(1,account.getAccountsum(account3));
-		aserEquals(1,account.getAccountsum(account4));
+		assertEquals(1,account.Streams("mozi"));
+		assertEquals(1,account.accountCycle("tom"));
+		assertEquals(1,account.Streams("mozi"));
 		
 		
 		
